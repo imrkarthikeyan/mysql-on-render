@@ -2,9 +2,10 @@ services:
   - type: web
     name: mysql-hms
     env: docker
-    plan: starter
-    dockerContext: .
+    plan: free
     dockerfilePath: Dockerfile
+    dockerContext: .
+    buildCommand: ./render/build.sh
     envVars:
       - key: MYSQL_ROOT_PASSWORD
         value: Karthi@123
@@ -12,3 +13,4 @@ services:
         value: hms
     ports:
       - 3306
+
